@@ -51,7 +51,7 @@ function IssuesCtrl($scope, GitIssues, GitRepo, Poll) {
   var fetchIssues = function() {
     GitIssues.list({}, function(issues) {
       if (issues) {
-        $scope.issues = issues.data;
+        $scope.issues = issues.data.filter(function(x) { console.log('pr', x.pull_request.html_url); return !!x.pull_request.html_url; });
       }
     });
     GitRepo.fetch(function(repo) {

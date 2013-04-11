@@ -38,11 +38,12 @@ angular.module('ngDashboard.services', ['ngResource']).
             list: {
               method:'JSONP',
               params:{
-                milestone: '*',
+                //milestone: '*',
                 state: 'open',
                 sort: 'created',
                 direction: 'desc',
-                per_page: 20
+                assignee: 'none',
+                per_page: 2000
               },
               isArray: false
             }
